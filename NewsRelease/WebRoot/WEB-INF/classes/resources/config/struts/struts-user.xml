@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="user" namespace="/user" extends="struts-default">
+  <default-class-ref class="com.zs.user.action.impl.UserActionImpl" />
+
+  <action name="userList" method="userList">
+   <result >/jsp/user/userList.jsp</result>
+  </action>
+
+  <action name="insertUser" method="insertUser">
+   <result type="redirectAction">./userList</result>
+  </action>
+  
+  <action name="deleteUser" method="deleteUser">
+   <result type="redirectAction">./userList</result>
+  </action>
+  
+  <action name="findUser" method="findUser">
+   <result>/jsp/user/updateUser.jsp</result>
+  </action>
+  
+  <action name="userDetail" method="findUser">
+   <result>/jsp/user/userDetail.jsp</result>
+  </action>
+  
+  <action name="updateUser" method="updateUser">
+   <result type="redirectAction">./userList</result>
+  </action>
+  
+  <action name="updatePwd" method="updatePwd">
+   <result type="redirectAction">./userList</result>
+  </action>
+  
+ </package>
+</struts> 

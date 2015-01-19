@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="modular" namespace="/modular" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.news.action.impl.ModularActionImpl" />
+
+  <action name="modularList" method="modularList">
+   <result >/jsp/modular/modularList.jsp</result>
+  </action>
+
+  <action name="insertModular" method="insertModular">
+   <result type="redirectAction">./modularList</result>
+  </action>
+  
+  <action name="deleteModular" method="deleteModular">
+   <result type="redirectAction">./modularList</result>
+  </action>
+  
+  <action name="findModular" method="findModular">
+   <result>/jsp/modular/updateModular.jsp</result>
+  </action>
+  
+  <action name="updateModular" method="updateModular">
+   <result type="redirectAction">./modularList</result>
+  </action>
+  
+  <action name="findListModular" method="findListModular">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+ </package>
+</struts> 

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zs.user.entity">
+	<class name="User" table="user_table" dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="id" type="java.lang.String" length="36">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="userName" type="java.lang.String" column="userName"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="nickName" type="java.lang.String" column="nickName"
+			length="100" unique="false" not-null="true" insert="true" update="true" />
+
+		<property name="passWord" type="java.lang.String" column="passWord"
+			length="200" unique="false" not-null="true" insert="true" update="true" />
+
+		<property name="sex" type="java.lang.String" column="sex"
+			length="2" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="age" type="java.lang.Integer" column="age"
+			unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="birthDate" type="java.lang.String" column="birthDate"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="email" type="java.lang.String" column="email"
+			length="45" unique="false" not-null="false" insert="true" update="true" />
+			
+			<property name="address" type="java.lang.String" column="address"
+   length="100" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="tel" type="java.lang.String" column="tel"
+			length="40" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="qq" type="java.lang.String" column="qq"
+			length="40" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="headImg" type="text" column="headImg" length="16777216"
+			unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="registDate" type="java.lang.String" column="registDate"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+
+		<property name="flag" type="java.lang.String" column="flag"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+			
+			<property name="loginDate" type="java.lang.String" column="loginDate"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+			
+			<property name="loginTimes" type="java.lang.Integer" column="loginTimes"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+			
+
+	</class>
+</hibernate-mapping>

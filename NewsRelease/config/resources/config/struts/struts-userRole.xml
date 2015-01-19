@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="userRole" namespace="/userRole" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.user.action.impl.UserRoleActionImpl" />
+
+  <action name="userRoleList" method="userRoleList">
+   <result >/jsp/userRole/userRoleList.jsp</result>
+  </action>
+
+  <action name="insertUserRole" method="insertUserRole">
+   <result type="redirectAction">./userRoleList</result>
+  </action>
+  
+  <action name="deleteUserRole" method="deleteUserRole">
+   <result type="redirectAction">./userRoleList</result>
+  </action>
+  
+  <action name="findUserRole" method="findUserRole">
+   <result>/jsp/userRole/updateUserRole.jsp</result>
+  </action>
+  
+  <action name="updateUserRole" method="updateUserRole">
+   <result type="redirectAction">./userRoleList</result>
+  </action>
+  
+  <action name="findRole" method="findUser">
+   <result>/jsp/userRole/insertUserRole.jsp</result>
+  </action>
+  
+  <action name="findRoleList" method="findRoleList">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+  
+ </package>
+</struts> 

@@ -1,0 +1,38 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.2//EN" 
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<!-- 字段校验 -->
+	<field name="user.nickName">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>昵称必须填写</message>
+		</field-validator>
+	</field>
+	<field name="user.passWord">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>密码是必填的</message>
+		</field-validator>
+	</field>
+
+	<field name="repassword">
+		<field-validator type="fieldexpression" short-circuit="true">
+			<!-- 表达式要写在 <![CDATA[]]> 内 -->
+			<param name="expression"><![CDATA[user.passWord==user.qrmm]]></param><!-- 
+				OGNL表达式 -->
+			<message>两次密码不一致</message>
+		</field-validator>
+	</field>
+
+
+	<field name="user.email">
+		<field-validator type="requiredstring" short-circuit="true">
+			<message>邮箱必填的</message>
+		</field-validator>
+
+		<field-validator type="regex" short-circuit="true">
+			<param name="expression"><![CDATA[(^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@([A-Za-z0-9-])+((\.com)|(\.cn)|(\.net)|(\.org)|(\.info)|(\.edu)|(\.mil)|(\.gov)|(\.biz)|(\.ws)|(\.us)|(\.tv)|(\.cc)|(\.aero)|(\.arpa)|(\.coop)|(\.int)|(\.jobs)|(\.museum)|(\.name)|(\.pro)|(\.travel)|(\.nato)|(\..{2,3})|(\..{2,3}\..{2,3}))$)]]></param>
+			<message>邮箱不合法</message>
+		</field-validator>
+	</field>
+</validators>

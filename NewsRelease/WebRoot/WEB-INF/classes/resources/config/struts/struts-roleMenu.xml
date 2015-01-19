@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="roleMenu" namespace="/roleMenu" extends="struts-default">
+  <default-class-ref class="com.zs.user.action.impl.RoleMenuActionImpl" />
+
+  <action name="roleMenuList" method="roleMenuList">
+   <result >/jsp/roleMenu/roleMenuList.jsp</result>
+  </action>
+
+  <action name="insertRoleMenu" method="insertRoleMenu">
+   <result type="redirectAction">../role/roleList</result>
+  </action>
+  
+  <action name="deleteRoleMenu" method="deleteRoleMenu">
+   <result type="redirectAction">./roleMenuList</result>
+  </action>
+  
+  <action name="findRoleMenu" method="findRoleMenu">
+   <result>/jsp/roleMenu/updateRole.jsp</result>
+  </action>
+  
+  <action name="roleDetail" method="findRoleMenu">
+   <result>/jsp/roleMenu/roleDetail.jsp</result>
+  </action>
+  
+  <action name="updateRoleMenu" method="updateRoleMenu">
+   <result type="redirectAction">./roleMenuList</result>
+  </action>
+  
+  <action name="findRole" method="findRole">
+   <result>/jsp/roleMenu/insertRoleMenu.jsp</result>
+  </action>
+  
+ </package>
+</struts> 

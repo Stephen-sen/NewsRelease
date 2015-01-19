@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="smallClass" namespace="/smallClass" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.news.action.impl.NewsSmallClassActionImpl" />
+
+  <action name="smallClassList" method="smallClassList">
+   <result >/jsp/smallClass/smallClassList.jsp</result>
+  </action>
+
+  <action name="insertSmallClass" method="insertSmallClass">
+   <result type="redirectAction">./smallClassList</result>
+  </action>
+  
+  <action name="deleteSmallClass" method="deleteSmallClass">
+   <result type="redirectAction">./smallClassList</result>
+  </action>
+  
+  <action name="findSmallClass" method="findSmallClass">
+   <result>/jsp/smallClass/updateSmallClass.jsp</result>
+  </action>
+  
+  <action name="updateSmallClass" method="updateSmallClass">
+   <result type="redirectAction">./smallClassList</result>
+  </action>
+  
+  <action name="findListSmaClass" method="findListSmaClass">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+  
+ </package>
+</struts> 

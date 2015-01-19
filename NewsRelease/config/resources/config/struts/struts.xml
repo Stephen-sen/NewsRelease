@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.ui.theme" value="simple" />
+	<include file="resources/config/struts/struts-user.xml"></include>
+	<include file="resources/config/struts/struts-login.xml"></include>
+	<include file="resources/config/struts/struts-admin.xml"></include>
+	<include file="resources/config/struts/struts-register.xml"></include>
+	<include file="resources/config/struts/struts-check.xml"></include>
+	<include file="resources/config/struts/struts-role.xml"></include>
+	<include file="resources/config/struts/struts-roleMenu.xml"></include>
+	<include file="resources/config/struts/struts-userRole.xml"></include>
+
+	<include file="resources/config/struts/struts-news.xml"></include>
+	<include file="resources/config/struts/struts-smallClass.xml"></include>
+	<include file="resources/config/struts/struts-bigClass.xml"></include>
+	<include file="resources/config/struts/struts-modular.xml"></include>
+	<include file="resources/config/struts/struts-menu.xml"></include>
+	<include file="resources/config/struts/struts-comment.xml"></include>
+	<include file="resources/config/struts/struts-mBoard.xml"></include>
+
+
+	<constant name="struts.multipart.maxSize" value="1024000000"/> 
+    <package name="upload" namespace="/upload" extends="struts-default">
+       <action name="fileUpload" class="com.action.support.FileUploadAction" method="upload">
+           <param name="savePath">/images/uploads</param> 
+       </action>
+    </package>
+</struts> 

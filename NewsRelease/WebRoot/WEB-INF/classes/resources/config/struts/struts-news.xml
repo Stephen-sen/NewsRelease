@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="news" namespace="/news" extends="struts-default">
+  <default-class-ref class="com.zs.news.action.impl.NewsActionImpl" />
+
+  <action name="newsList" method="newsList">
+   <result >/jsp/news/newsList.jsp</result>
+  </action>
+
+  <action name="insertNews" method="insertNews">
+   <result type="redirectAction">./newsList</result>
+  </action>
+  
+  <action name="deleteNews" method="deleteNews">
+   <result type="redirectAction">./newsList</result>
+  </action>
+  
+  <action name="findNews" method="findNews">
+   <result>/jsp/news/updateNews.jsp</result>
+  </action>
+  
+  <action name="newsDetail" method="findNews">
+   <result>/jsp/news/newsDetail.jsp</result>
+  </action>
+  
+  <action name="updateNews" method="updateNews">
+   <result type="redirectAction">./newsList</result>
+  </action>
+  
+  <action name="showTitle" method="showTitle">
+   <result>/jsp/news.jsp</result>
+  </action>
+  
+  <action name="showNews" method="showNews">
+   <result>/jsp/showNews.jsp</result>
+  </action>
+ </package>
+</struts> 

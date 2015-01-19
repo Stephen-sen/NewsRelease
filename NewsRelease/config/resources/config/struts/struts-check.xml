@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="Check" namespace="/" extends="struts-default,json-default">
+		<default-class-ref class="com.zs.user.action.impl.Check" />
+		<action name="check" method="checkName">
+		<result type="json">
+		<param name="root">result</param>
+		</result>
+		</action>
+		
+		<action name="checkPwd" method="checkPwd">
+		<result type="json">
+		<param name="root">result</param>
+		</result>
+		</action>
+		
+	</package>
+</struts> 

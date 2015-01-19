@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.zs.news.entity">
+	<class name="Comment" table="comment_table">
+		<id name="id" column="id" type="java.lang.String" length="36">
+			<generator class="uuid.hex"></generator>
+		</id>
+
+		<property name="dateTime" type="java.lang.String" column="dateTime"
+			length="100" unique="false" not-null="false" insert="true" update="true" />
+
+			<property name="context" type="text" column="context" unique="false"
+			length="65536" not-null="true" insert="true" update="true" />
+
+		<property name="flag" type="java.lang.String" column="flag"
+			length="2" unique="false" not-null="false" insert="true" update="true" />
+
+		<many-to-one name="user" not-null="false" update="true"
+			lazy="false" insert="true" cascade="none">
+			<column name="user"></column>
+		</many-to-one>
+
+		<many-to-one name="news" not-null="false" update="true"
+			lazy="false" insert="true" cascade="none">
+			<column name="news"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

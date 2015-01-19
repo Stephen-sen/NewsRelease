@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="menu" namespace="/menu" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.user.action.impl.MenuActionImpl" />
+
+  <action name="menuList" method="menuList">
+   <result >/jsp/menu/menuList.jsp</result>
+  </action>
+
+  <action name="insertMenu" method="insertMenu">
+   <result type="redirectAction">./menuList</result>
+  </action>
+  
+  <action name="deleteMenu" method="deleteMenu">
+   <result type="redirectAction">./menuList</result>
+  </action>
+  
+  <action name="findMenu" method="findMenu">
+   <result>/jsp/menu/updateMenu.jsp</result>
+  </action>
+  
+  <action name="menuDetail" method="findMenu">
+   <result>/jsp/menu/menuDetail.jsp</result>
+  </action>
+  
+  <action name="updateMenu" method="updateMenu">
+   <result type="redirectAction">./menuList</result>
+  </action>
+  
+  <action name="findMenuList" method="findMenuList">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+ </package>
+</struts> 

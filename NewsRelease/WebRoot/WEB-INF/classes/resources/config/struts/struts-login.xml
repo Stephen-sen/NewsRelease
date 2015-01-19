@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="login" namespace="/" extends="struts-default,json-default">
+		<default-class-ref class="com.zs.user.action.impl.LoginAction" />
+		<action name="LoginAction" method="loginCheck">
+			<result type="redirect">/jsp/frame.jsp</result>
+			<result name="error">/jsp/Login.jsp</result>
+		</action>
+
+		<action name="userLogin" method="userLoginCheck">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="loginOut" method="LoginOut">
+			<result>/jsp/Login.jsp</result>
+		</action>
+
+		<action name="destroyLogin" method="destroyLogin">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+		
+		<action name="checkVerify" method="checkVerify">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+	</package>
+
+	<package name="PictureCheckCode" namespace="/" extends="struts-default">
+		<default-class-ref class="com.zs.base.dao.PictureCheckCode" />
+		<action name="PictureCheckCode" method="getVerify">
+		</action>
+	</package>
+</struts> 

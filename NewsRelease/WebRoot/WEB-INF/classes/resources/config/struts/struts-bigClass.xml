@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="bigClass" namespace="/bigClass" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.news.action.impl.NewsBigClassActionImpl" />
+
+  <action name="bigClassList" method="bigClassList">
+   <result >/jsp/bigClass/bigClassList.jsp</result>
+  </action>
+
+  <action name="insertBigClass" method="insertBigClass">
+   <result type="redirectAction">./bigClassList</result>
+  </action>
+  
+  <action name="deleteBigClass" method="deleteBigClass">
+   <result type="redirectAction">./bigClassList</result>
+  </action>
+  
+  <action name="findBigClass" method="findBigClass">
+   <result>/jsp/bigClass/updateBigClass.jsp</result>
+  </action>
+  
+  <action name="updateBigClass" method="updateBigClass">
+   <result type="redirectAction">./bigClassList</result>
+  </action>
+  
+  <action name="findListBigClass" method="findListBigClass">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+  
+ </package>
+</struts> 

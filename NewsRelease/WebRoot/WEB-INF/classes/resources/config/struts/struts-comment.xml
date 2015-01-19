@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="comment" namespace="/comment" extends="struts-default,json-default">
+  <default-class-ref class="com.zs.news.action.impl.CommentActionImpl" />
+
+  <action name="commentList" method="commentList">
+   <result >/jsp/comment/commentList.jsp</result>
+  </action>
+
+  <action name="insertComment" method="insertComment">
+   <result type="json">
+  <param name="root">result</param>
+  </result>
+  </action>
+  
+  <action name="deleteComment" method="deleteComment">
+   <result type="redirectAction">./commentList</result>
+  </action>
+  
+  <action name="findComment" method="findComment">
+   <result>/jsp/comment/updateComment.jsp</result>
+  </action>
+  
+  <action name="commentDetail" method="findComment">
+   <result>/jsp/comment/commentDetail.jsp</result>
+  </action>
+  
+  <action name="updateComment" method="updateComment">
+   <result type="redirectAction">./commentList</result>
+  </action>
+ </package>
+</struts> 

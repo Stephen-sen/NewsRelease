@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="mBoard" namespace="/mBoard" extends="struts-default">
+  <default-class-ref class="com.zs.news.action.impl.MBoardActionImpl" />
+
+  <action name="mYMBoardList" method="mBoardList">
+   <result >/jsp/mBoard/mYMBoardList.jsp</result>
+  </action>
+  
+<action name="mBoardList" method="mBoardList">
+   <result >/jsp/mBoard/mBoardList.jsp</result>
+  </action>
+
+  <action name="insertMBoard" method="insertMBoard">
+  <result type="redirectAction">./mBoardList</result>
+  </action>
+  
+  <action name="deleteMBoard" method="deleteMBoard">
+   <result type="redirectAction">./mBoardList</result>
+  </action>
+  
+  <action name="findMBoard" method="findMBoard">
+   <result>/jsp/mBoard/updateMBoard.jsp</result>
+  </action>
+  
+  <action name="updateMBoard" method="updateMBoard">
+   <result type="redirectAction">./mBoardList</result>
+  </action>
+ </package>
+</struts> 
